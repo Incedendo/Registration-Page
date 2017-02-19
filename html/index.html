@@ -1,0 +1,334 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+    <title>CSS Registration Form</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" type="text/css" href="../css/default.css"/>
+    <script type = "text/javascript"  src = "../javascript/validator.js" >
+    </script>
+</head>
+
+<body>    
+    <form method="get" action="" class="register" id="myForm" name="myForm">
+        <h1>Registration</h1>
+        <fieldset class="row1">
+            <legend>Personal Details
+            </legend>
+            <p>
+                <label>First Name *
+                </label>
+                <input id="first_name" name="first_name" required="required" type="text" class="long" />
+            </p>
+            <p>
+                <label>Middle Name * 
+                </label>
+                <input id="middle_name" name="middle_name" required="required" type="text" class="long" />
+            </p>
+            <p>
+                <label> Last Name * 
+                </label>
+                <input id="last_name" name="last_name" required="required" type="text" class="long"  />
+            </p>
+            <p>
+                <label>Organization *
+                </label>
+                <input id="Organization" name="Organization" required="required" type="text" class="long"/>
+            </p>
+            <p>
+                <label class="optional">Job Title
+                </label>
+                <input id="" name="" type="text" class="long"/>
+            </p>
+            <p>
+                <label>Phone *
+                </label>
+                <input id="Phone" name="Phone" required="required" type="text" maxlength="12" /> <!-- onchange="chkPhone()" -->
+            </p>
+            <p>
+                <label >Street Address *
+                </label>
+                <input id="StreetAddress" name="StreetAddress" required="required" type="text" class="long"/>
+            </p>
+            <p>
+                <label>City *
+                </label>
+                <input id="City" name="City" required="required" type="text" class="long" onchange="getRadioVal('myForm','RegistrationFees')"/>
+            </p>
+            <p>
+                <label>State *
+                </label>
+                <select id = "State">
+                    <option value="AL">Alabama </option>
+                    <option value="AK">Alaska</option>
+                    <option value="AZ">Arizona</option>
+                    <option value="AR">Arkansas</option>
+                    <option value="CA">California</option>
+                    <option value="CO">Colorado</option>
+                    <option value="CT">Connecticut</option>
+                    <option value="DE">Delaware</option>
+                    <option value="DC">District Of Columbia</option>
+                    <option value="FL">Florida</option>
+                    <option value="GA">Georgia</option>
+                    <option value="HI">Hawaii</option>
+                    <option value="ID">Idaho</option>
+                    <option value="IL">Illinois </option>
+                    <option value="IN">Indiana</option>
+                    <option value="IA">Iowa</option>
+                    <option value="KS">Kansas</option>
+                    <option value="KY">Kentucky</option>
+                    <option value="LA">Louisiana</option>
+                    <option value="ME">Maine</option>
+                    <option value="MD">Maryland</option>
+                    <option value="MA">Massachusetts</option>
+                    <option value="MI">Michigan</option>
+                    <option value="MN">Minnesota</option>
+                    <option value="MS">Mississippi</option>
+                    <option value="MO">Missouri</option>
+                    <option value="MT">Montana</option>
+                    <option value="NE">Nebraska</option>
+                    <option value="NV">Nevada</option>
+                    <option value="NH">New Hampshire</option>
+                    <option value="NJ">New Jersey</option>
+                    <option value="NM">New Mexico</option>
+                    <option value="NY">New York</option>
+                    <option value="NC">North Carolina</option>
+                    <option value="ND">North Dakota</option>
+                    <option value="OH">Ohio</option>
+                    <option value="OK">Oklahoma</option>
+                    <option value="OR">Oregon</option>
+                    <option value="PA">Pennsylvania</option>
+                    <option value="RI">Rhode Island</option>
+                    <option value="SC">South Carolina</option>
+                    <option value="SD">South Dakota</option>
+                    <option value="TN">Tennessee</option>
+                    <option value="TX" selected="selected">Texas</option>
+                    <option value="UT">Utah</option>
+                    <option value="VT">Vermont</option>
+                    <option value="VA">Virginia</option>
+                    <option value="WA">Washington</option>
+                    <option value="WV">West Virginia</option>
+                    <option value="WI">Wisconsin</option>
+                    <option value="WY">Wyoming</option>
+                </select>
+            </p>
+            <p>
+                <label>Zip *
+                </label>
+                <input id="Zip" name="" required="required" type="text" class="long" />
+            </p>
+            <p>
+                <label>Email *
+                </label>
+                <input id="Email" name="" required="required" type="text" class="long"  />
+            </p>
+            <p>
+                <label>Work Phone *
+                </label>
+                <input id="WorkPhone" name="" required="required" type="text" class="long" />
+            </p>
+        </fieldset>
+
+        <fieldset class="row1">
+            <legend>Conference Details
+            </legend>
+            <div>
+                <p>
+                    <label class="header">Registration Fees</label>
+                </p>
+                <p>
+                    <label class="fee1"></label>
+                    <input type="radio" name="RegistrationFees" required="required" onclick="handleRegistration(this);" value="200"/>Member: $200</select>
+                </p>
+                <p>
+                    <label class="fee1"></label>
+                    <input type="radio" name="RegistrationFees" required="required" onclick="handleRegistration(this);" value="250"/>Non-member: $250 </select>
+                </p>
+                <p>
+                    <label class="fee1"></label>
+                    <input type="radio" name="RegistrationFees" required="required" onclick="handleRegistration(this);" value="25"/>Students: $25</select>
+                </p>
+                <p>
+                    <label class="fee1"></label>
+                    <input type="radio" name="RegistrationFees" required="required" onclick="handleRegistration(this);" value="50"/>Non-member Students: $50</select>
+                </p>
+            </div>
+            <div>
+                <p>
+                    <label class="header">Additional Workshop</label>
+                </p>
+                <p>
+                    <label class="header1">Friday</label>
+                </p>
+                <p>
+                    <label class="fee1"><!-- C# and .NET: $100 --></label>
+                    <input type="radio" name="FridayWorkshop" required="required" value="100" onclick="handleFriday(this);"/>C# and .NET: $100</select>
+                </p>
+                <p>
+                    <label class="fee1"></label>
+                    <input type="radio" name="FridayWorkshop" required="required" value="75" onclick="handleFriday(this);"/>Issues in Wireless Security: $75</select>
+                </p>
+                <p>
+                    <label class="fee1"></label>
+                    <input type="radio" name="FridayWorkshop" required="required" value="50" onclick="handleFriday(this);"/>Scenario Based Requirements Engineering: $50</select>
+                </p>
+                <p>
+                    <label class="header1">Saturday</label>
+                </p>
+                <p>
+                    <label class="fee1"></label>
+                    <input type="radio" class="regMoney" name="SaturdayWorkshop" required="required" value="50" onclick="handleSaturday(this);"/>Algorithms to Applications: $50</select>
+                </p>
+                <p>
+                    <label class="fee1"></label>
+                    <input type="radio" class="regMoney" name="SaturdayWorkshop" required="required" value="75" onclick="handleSaturday(this);"/>Cloud Computing: $75</select>
+                </p>
+                
+            </div>
+
+        </fieldset>
+        <fieldset class="row1">
+            <legend>Total Cost:
+            </legend>
+            <p>
+                <label class="fee1">Registration Fee: </label>
+                <label id="costReg" class="fee1">(Base Fee)</lable>
+            </p>
+            <p>
+                <label class="fee1">+ </label>
+                <label class="fee1"> +</label>              
+            </p>
+            <p>
+                <label class="fee1">Additional Workshop: </label>
+                <label id="costFri" class="fee1"> (Friday)</label>              
+            </p>
+            <p>
+                <label class="fee1"></label>
+                <label class="fee1"> +</label>              
+            </p>
+            <p>
+                <label class="fee1"></label>
+                <label id="costSat" class="fee1"> (Saturday)</label>              
+            </p>
+            <p>
+                <label class="fee1">---------------------</label>  
+                <label class="fee1">---------------------------------------------------------</label>              
+            </p>
+            <p>
+                <label class="fee1">Total: </label>
+                <label id="total" class="fee1"></label>              
+            </p>
+            
+        </fieldset>
+<!-- 
+        var num = parseInt(str.match(/\d+/),10) 
+-->
+
+        <fieldset class="row1">
+            <legend>Payment Information
+            </legend>
+            <p>
+                <label>Methods*</label>
+                <select required="required">
+                    <option value="0">Master Card
+                    </option>
+                    <option value="1">Visa
+                    </option>
+                    <option value="2">Discover
+                    </option>
+                </select>
+            </p>
+            <p>
+                <label>Card Number*
+                </label>
+                <input id="CardNumber" name="cardnumber" required="required" type="text" placeholder=" enter card number here" class="long" />
+            </p>
+            <p>
+                <label>Exp Month*
+                </label>
+                <select id="ExpMonth">
+                    <option value="1">January
+                    </option>
+                    <option value="2">February
+                    </option>
+                    <option value="3">March
+                    </option>
+                    <option value="4">April
+                    </option>
+                    <option value="5">May
+                    </option>
+                    <option value="6">June
+                    </option>
+                    <option value="7">July
+                    </option>
+                    <option value="8">August
+                    </option>
+                    <option value="9">September
+                    </option>
+                    <option value="10">October
+                    </option>
+                    <option value="11">November
+                    </option>
+                    <option value="12">December
+                    </option>
+                </select>
+            </p>
+            <p>
+                <label>Exp Year*
+                </label>
+                <select id="ExpYear">
+                    <option value="1">2018
+                    </option>
+                    <option value="2">2019
+                    </option>
+                    <option value="3">2020
+                    </option>
+                    <option value="4">2021
+                    </option>
+                    <option value="5">2022
+                    </option>
+                </select>
+            </p>
+        </fieldset>
+
+        <input type = "reset"  id = "reset" value="Reset"/>
+        <input type = "submit"  id = "submit" value="Register" />
+
+        </form>
+
+    <script type = "text/javascript"  src = "../javascript/validatorr.js"> </script>
+    <script type="text/javascript">
+
+        var registration_fee = 0;
+        var friday_fee = 0;
+        var saturday_fee = 0;
+        var total = 0;
+        
+        function handleRegistration(myRadio) {
+            registration_fee = myRadio.value;
+            document.getElementById("costReg").innerHTML = "$"+registration_fee;
+            total = parseInt(registration_fee) + parseInt(friday_fee) + parseInt(saturday_fee);
+            document.getElementById("total").innerHTML = "$"+total;
+        }
+        function handleFriday(FridayRadio) {
+            friday_fee = FridayRadio.value;
+            document.getElementById("costFri").innerHTML = "$"+friday_fee ;
+            total = parseInt(registration_fee) + parseInt(friday_fee) + parseInt(saturday_fee);
+            document.getElementById("total").innerHTML = "$"+total;
+        }
+        function handleSaturday(SatRadio) {
+            saturday_fee = SatRadio.value;
+            document.getElementById("costSat").innerHTML = "$"+saturday_fee;
+            total = parseInt(registration_fee) + parseInt(friday_fee) + parseInt(saturday_fee);
+            document.getElementById("total").innerHTML = "$"+total;
+        }
+        
+    </script>
+
+</body>
+</html>
+
+
+
+
+
